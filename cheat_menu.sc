@@ -227,9 +227,22 @@ ADD_TEXT_LABEL vcwng "~r~You ain't in a car"
 
 //barber shop
 ADD_TEXT_LABEL bsmn "Barber Shop"
-ADD_TEXT_LABEL hcsmn "Haircut Style"
+ADD_TEXT_LABEL hcsmn1 "Haircut Style 1"
+ADD_TEXT_LABEL hcsmn2 "Haircut Style 2"
+ADD_TEXT_LABEL hcsmn3 "Haircut Style 3"
 
 ADD_TEXT_LABEL hcmr0 "Cesar"
+ADD_TEXT_LABEL hcmr1 "Blonde Hair"
+ADD_TEXT_LABEL hcmr2 "Pink Hair"
+ADD_TEXT_LABEL hcmr3 "Blonde Afro"
+ADD_TEXT_LABEL hcmr4 "Blonde Cornrow"
+ADD_TEXT_LABEL hcmr5 "High Afro"
+ADD_TEXT_LABEL hcmr6 "Wedge"
+ADD_TEXT_LABEL hcmr7 "Detail Cut"
+ADD_TEXT_LABEL hcmr8 "Groove Cut"
+ADD_TEXT_LABEL hcmr9 "Mohawk"
+ADD_TEXT_LABEL hcmr10 "Blonde Mohawk"
+ADD_TEXT_LABEL hcmr11 "Pink Mohawk"
 
 
 
