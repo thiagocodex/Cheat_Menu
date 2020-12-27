@@ -4,7 +4,7 @@ player_menu:
 
     LVAR_INT pmid selected
     CREATE_MENU pmn 210.0 100.0 200.0 1 TRUE TRUE 0 pmid
-    SET_MENU_COLUMN pmid 0 DUMMY amn DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY
+    SET_MENU_COLUMN pmid 0 DUMMY amn bsmn psmn DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY
     PRINT_HELP_FOREVER pmh
 
     WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
@@ -23,6 +23,16 @@ player_menu:
             CASE 0
                 IF IS_BUTTON_PRESSED PAD1 CROSS
                     GOTO apparel_menu
+                ENDIF
+            BREAK
+            CASE 1
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    GOTO barber_shop_menu
+                ENDIF
+            BREAK
+            CASE 2
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    GOTO player_stats_menu
                 ENDIF
             BREAK
         ENDSWITCH

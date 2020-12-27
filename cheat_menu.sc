@@ -6,11 +6,16 @@ REQUIRE binco_menu.sc
 REQUIRE prolaps_menu.sc
 REQUIRE vehicle_spawner_menu.sc
 REQUIRE vehicles_menu.sc
+REQUIRE vehicles.sc
 REQUIRE suburban_menu.sc
+REQUIRE player_stats_menu.sc
+REQUIRE barber_shop_menu.sc
+
 
 ADD_TEXT_LABEL cmn "Cheat Menu"
 ADD_TEXT_LABEL pmn "Player"
 ADD_TEXT_LABEL amn "Apparel"
+ADD_TEXT_LABEL psmn "Player Stats"
 
 ADD_TEXT_LABEL cmh "Use ~u~ and ~d~ to navigate the cheat menu.~n~~k~~PED_SPRINT~ Select~n~~k~~VEHICLE_ENTER_EXIT~ Back"
 ADD_TEXT_LABEL pmh "Use ~u~ and ~d~ to select an item.~N~~k~~PED_SPRINT~ Choose~N~~k~~VEHICLE_ENTER_EXIT~ Back"
@@ -21,7 +26,7 @@ ADD_TEXT_LABEL bmn "Binco"
 ADD_TEXT_LABEL plmn "Pro-Laps"
 ADD_TEXT_LABEL sumn "Sub Urban"
 
-ADD_TEXT_LABEL vsmn "Vehicle-Spawner"
+ADD_TEXT_LABEL vsmn "Vehicle Spawner"
 ADD_TEXT_LABEL crmn "Cars"
 
 //clothes category
@@ -191,7 +196,42 @@ ADD_TEXT_LABEL vrow10 "Beagle"
 ADD_TEXT_LABEL vrow11 "Benson"
 ADD_TEXT_LABEL vrow12 "Berkley's RC Van"
 
-///////////////////////////////////////////////
+
+//fat stats
+ADD_TEXT_LABEL fatmn "Fat"
+ADD_TEXT_LABEL fatmr0 "Thin"
+ADD_TEXT_LABEL fatmr1 "Skinny"
+ADD_TEXT_LABEL fatmr2 "Normal"
+ADD_TEXT_LABEL fatmr3 "Little Fat"
+ADD_TEXT_LABEL fatmr4 "Fat"
+ADD_TEXT_LABEL fatmr5 "Obese"
+
+
+//muscle stats
+ADD_TEXT_LABEL mscmn "Muscle"
+ADD_TEXT_LABEL mscmr0 "Muscle 0"
+ADD_TEXT_LABEL mscmr1 "Muscle 200"
+ADD_TEXT_LABEL mscmr2 "Muscle 400"
+ADD_TEXT_LABEL mscmr3 "Muscle 600"
+ADD_TEXT_LABEL mscmr4 "Muscle 800"
+ADD_TEXT_LABEL mscmr5 "Muscle 1000"
+
+//vehicle options
+ADD_TEXT_LABEL vmn "Vehicle"
+ADD_TEXT_LABEL vomn "Vehicle-Options"
+ADD_TEXT_LABEL vcmn "Vehicle Color 1"
+ADD_TEXT_LABEL vcmn2 "Vehicle Color 2"
+
+ADD_TEXT_LABEL vcwng "~r~You ain't in a car"
+
+
+//barber shop
+ADD_TEXT_LABEL bsmn "Barber Shop"
+ADD_TEXT_LABEL hcsmn "Haircut Style"
+
+ADD_TEXT_LABEL hcmr0 "Cesar"
+
+
 
 {
 ok_go_to_main:
@@ -259,7 +299,7 @@ main:
     ENDIF
 
     WHILE IS_KEY_PRESSED VK_LSHIFT
-        GET_CLOTHES_ITEM 0 TORSO txt mdl
+        GET_CLOTHES_ITEM 0 HEAD txt mdl
         PRINT_FORMATTED_NOW "TXT: %i MDL: %i" 1 txt mdl
         WAIT 0
     ENDWHILE
@@ -298,7 +338,7 @@ cheat_menu:
     LVAR_INT cmid selected
     SET_PLAYER_CONTROL 0 FALSE
     CREATE_MENU cmn 210.0 100.0 200.0 1 TRUE TRUE 0 cmid
-    SET_MENU_COLUMN cmid 0 DUMMY pmn vsmn DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY
+    SET_MENU_COLUMN cmid 0 DUMMY pmn vsmn vmn DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY
     PRINT_HELP_FOREVER cmh
 
     WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
@@ -320,6 +360,11 @@ cheat_menu:
             CASE 1
                 IF IS_BUTTON_PRESSED PAD1 CROSS
                     GOTO vehicle_spawner_menu
+                ENDIF
+            BREAK
+            CASE 2
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    GOTO vehicle
                 ENDIF
             BREAK
         ENDSWITCH
