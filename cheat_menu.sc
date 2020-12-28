@@ -27,6 +27,7 @@ ADD_TEXT_LABEL plmn "Pro-Laps"
 ADD_TEXT_LABEL sumn "Sub Urban"
 
 ADD_TEXT_LABEL vsmn "Vehicle Spawner"
+ADD_TEXT_LABEL vsauxmn "Vehicle-Spawner"
 ADD_TEXT_LABEL crmn "Cars"
 
 //clothes category
@@ -159,8 +160,8 @@ ADD_TEXT_LABEL sutr11 "Rockstar Sweat"
 
 
 /////////////////////////////////////////////
-ADD_TEXT_LABEL pag1 "Page 1"
-ADD_TEXT_LABEL pag2 "Page 2"
+ADD_TEXT_LABEL vspag1 "Vehicle Spawner 1"
+ADD_TEXT_LABEL vspag2 "Vehicle Spawner 2"
 
 ADD_TEXT_LABEL veh1 "Vehicles 1"
 ADD_TEXT_LABEL veh2 "Vehicles 2"
@@ -179,6 +180,61 @@ ADD_TEXT_LABEL veh14 "Vehicles 14"
 ADD_TEXT_LABEL veh15 "Vehicles 15"
 ADD_TEXT_LABEL veh16 "Vehicles 16"
 ADD_TEXT_LABEL veh17 "Vehicles 17"
+
+
+//aircraft menu
+ADD_TEXT_LABEL acmn "Aircraft"
+ADD_TEXT_LABEL boatmr "Boats"
+ADD_TEXT_LABEL chmr1 "Coupes & Hatchbacks 1"
+ADD_TEXT_LABEL chmr2 "Coupes & Hatchbacks 2"
+ADD_TEXT_LABEL govmr "Government"
+ADD_TEXT_LABEL indmr1 "Industrial"
+ADD_TEXT_LABEL indmr2 "Industrial 2"
+ADD_TEXT_LABEL lrmr "Lowriders"
+ADD_TEXT_LABEL miscmr "Miscellaneous"
+ADD_TEXT_LABEL mbmr "Motercycles & Bikes"
+ADD_TEXT_LABEL novmr "Novelty"
+ADD_TEXT_LABEL psmr "Public Service"
+ADD_TEXT_LABEL rcmr "Remote Control"
+
+//boats menu
+ADD_TEXT_LABEL bomr0 "Coastguard"
+ADD_TEXT_LABEL bomr1 "Dinghy"
+ADD_TEXT_LABEL bomr2 "Jetmax"
+ADD_TEXT_LABEL bomr3 "Launch"
+ADD_TEXT_LABEL bomr4 "Marquis"
+ADD_TEXT_LABEL bomr5 "Predator"
+ADD_TEXT_LABEL bomr6 "Reefer"
+ADD_TEXT_LABEL bomr7 "Speeder"
+ADD_TEXT_LABEL bomr8 "Squalo"
+ADD_TEXT_LABEL bomr9 "Tropic"
+
+ADD_TEXT_LABEL acmnp1 "Aircraft 1"
+ADD_TEXT_LABEL acmnp2 "Aircraft 2"
+
+
+ADD_TEXT_LABEL acmr0 "Andromada"
+ADD_TEXT_LABEL acmr1 "AT-400"
+ADD_TEXT_LABEL acmr2 "Beagle"
+ADD_TEXT_LABEL acmr3 "Cargobob"
+ADD_TEXT_LABEL acmr4 "Cropduster"
+ADD_TEXT_LABEL acmr5 "Dodo"
+ADD_TEXT_LABEL acmr6 "Hunter"
+ADD_TEXT_LABEL acmr7 "Hydra"
+ADD_TEXT_LABEL acmr8 "Jetpack"
+ADD_TEXT_LABEL acmr9 "Leviathan"
+ADD_TEXT_LABEL acmr10 "Nevada"
+ADD_TEXT_LABEL acmr11 "News Chopper"
+ADD_TEXT_LABEL acmr12 "Maverick"
+ADD_TEXT_LABEL acmr13 "Police Maverick"
+ADD_TEXT_LABEL acmr14 "Parachute"
+ADD_TEXT_LABEL acmr15 "Raindance"
+ADD_TEXT_LABEL acmr16 "Rustler"
+ADD_TEXT_LABEL acmr17 "Sea Sparrow"
+ADD_TEXT_LABEL acmr18 "Shamal"
+ADD_TEXT_LABEL acmr19 "Skimmer"
+ADD_TEXT_LABEL acmr20 "Sparrow"
+ADD_TEXT_LABEL acmr21 "Stuntplane"
 
 /////////////////////////////////////
 
