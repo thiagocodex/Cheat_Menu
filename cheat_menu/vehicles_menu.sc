@@ -4,7 +4,7 @@ aircraft_spawner_menu:
     DELETE_MENU 0
     LVAR_INT acmid selected 
     CREATE_MENU vsauxmn 210.0 100.0 200.0 1 TRUE TRUE 0 acmid
-    SET_MENU_COLUMN acmid 0 DUMMY acmnp1 acmnp2 boatmr chmr1 chmr2 govmr indmr1 indmr2 lrmr miscmr mbmr novmr
+    SET_MENU_COLUMN acmid 0 DUMMY acmnp1 acmnp2 boatmr chbmr1 chbmr2 govmr indmr1 indmr2 lrmr miscmr mbmr novmr
     PRINT_HELP_FOREVER pmh
 
     WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
@@ -26,12 +26,17 @@ aircraft_spawner_menu:
             BREAK
             case 1
                 IF IS_BUTTON_PRESSED PAD1 CROSS
-                    //GOTO aircraft_spawner_menu_page2
+                    GOTO aircraft_spawner_menu_page2
                 ENDIF
             BREAK
             case 2
                 IF IS_BUTTON_PRESSED PAD1 CROSS
                     GOTO boat_spawner_menu
+                ENDIF
+            BREAK
+            case 3
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    GOTO coupes_and_hatchbacks_menu_page1
                 ENDIF
             BREAK
         ENDSWITCH
@@ -43,13 +48,12 @@ aircraft_spawner_menu:
 
 
 
-
 {
-aircraft_spawner_menu_page1:
+coupes_and_hatchbacks_menu_page1:
     DELETE_MENU 0
-    LVAR_INT acmp1id selected 
-    CREATE_MENU acmn 210.0 100.0 200.0 1 TRUE TRUE 0 acmp1id
-    SET_MENU_COLUMN acmp1id 0 DUMMY acmr0 acmr1 acmr2 acmr3 acmr4 acmr5 acmr6 acmr7 acmr8 acmr9 acmr10 acmr11
+    LVAR_INT chmid1 selected 
+    CREATE_MENU chauxmn 210.0 100.0 200.0 1 TRUE TRUE 0 chmid1
+    SET_MENU_COLUMN chmid1 0 DUMMY chmr0 chmr1 chmr2 chmr3 chmr4 chmr5 chmr6 chmr7 chmr8 chmr9 chmr10 chmr11
     PRINT_HELP_FOREVER pmh
 
     WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
@@ -62,7 +66,7 @@ aircraft_spawner_menu_page1:
 
     WHILE NOT IS_BUTTON_PRESSED PAD1 TRIANGLE
 
-        GET_MENU_ITEM_SELECTED acmp1id selected
+        GET_MENU_ITEM_SELECTED chmid1 selected
         SWITCH selected
             case 0
                 IF IS_BUTTON_PRESSED PAD1 CROSS
@@ -180,6 +184,243 @@ aircraft_spawner_menu_page1:
     GOTO aircraft_spawner_menu
 }
 
+
+
+{
+aircraft_spawner_menu_page1:
+    DELETE_MENU 0
+    LVAR_INT acmp1id selected 
+    CREATE_MENU acmn 210.0 100.0 200.0 1 TRUE TRUE 0 acmp1id
+    SET_MENU_COLUMN acmp1id 0 DUMMY acmr0 acmr1 acmr2 acmr3 acmr4 acmr5 acmr6 acmr7 acmr8 acmr9 acmr10 acmr11
+    PRINT_HELP_FOREVER pmh
+
+    WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 CROSS
+        WAIT 0
+    ENDWHILE
+
+    WHILE NOT IS_BUTTON_PRESSED PAD1 TRIANGLE
+
+        GET_MENU_ITEM_SELECTED acmp1id selected
+        SWITCH selected
+            case 0
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL ANDROM
+                    SPAWN_VEHICLE_BY_CHEATING ANDROM
+                    MARK_MODEL_AS_NO_LONGER_NEEDED ANDROM
+                    //until I get it solved
+                    PRINT_HELP_STRING "Spawned Andromada by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 1
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL AT400
+                    SPAWN_VEHICLE_BY_CHEATING AT400
+                    MARK_MODEL_AS_NO_LONGER_NEEDED AT400
+                    PRINT_HELP_STRING "Spawned Alpha by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 2
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL BEAGLE
+                    SPAWN_VEHICLE_BY_CHEATING BEAGLE
+                    MARK_MODEL_AS_NO_LONGER_NEEDED BEAGLE
+                    PRINT_HELP_STRING "Spawned Ambulance by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 3
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL CARGOBOB
+                    SPAWN_VEHICLE_BY_CHEATING CARGOBOB
+                    MARK_MODEL_AS_NO_LONGER_NEEDED CARGOBOB
+                    PRINT_HELP_STRING "Spawned Andromada by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 4
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL CROPDUST
+                    SPAWN_VEHICLE_BY_CHEATING CROPDUST
+                    MARK_MODEL_AS_NO_LONGER_NEEDED CROPDUST
+                    PRINT_HELP_STRING "Spawned AT-400 by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 5
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL DODO
+                    SPAWN_VEHICLE_BY_CHEATING DODO
+                    MARK_MODEL_AS_NO_LONGER_NEEDED DODO
+                    PRINT_HELP_STRING "Spawned Baggage Handler by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 6
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL HUNTER
+                    SPAWN_VEHICLE_BY_CHEATING HUNTER
+                    MARK_MODEL_AS_NO_LONGER_NEEDED HUNTER
+                    PRINT_HELP_STRING "Spawned Bandito by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 7
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL HYDRA
+                    SPAWN_VEHICLE_BY_CHEATING HYDRA
+                    MARK_MODEL_AS_NO_LONGER_NEEDED HYDRA
+                    PRINT_HELP_STRING "Spawned Banshee by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            //problem down here
+            case 8
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL LEVIATHN
+                    SPAWN_VEHICLE_BY_CHEATING LEVIATHN
+                    MARK_MODEL_AS_NO_LONGER_NEEDED LEVIATHN
+                    PRINT_HELP_STRING "Spawned Beagle by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 9
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL NEVADA
+                    SPAWN_VEHICLE_BY_CHEATING NEVADA
+                    MARK_MODEL_AS_NO_LONGER_NEEDED NEVADA
+                    PRINT_HELP_STRING "Spawned Benson by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 10
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL VCNMAV
+                    SPAWN_VEHICLE_BY_CHEATING VCNMAV
+                    MARK_MODEL_AS_NO_LONGER_NEEDED VCNMAV
+                    PRINT_HELP_STRING "Spawned Berkley's RC Van by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 11
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL MAVERICK
+                    SPAWN_VEHICLE_BY_CHEATING MAVERICK
+                    MARK_MODEL_AS_NO_LONGER_NEEDED MAVERICK
+                    PRINT_HELP_STRING "Spawned Berkley's RC Van by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+        ENDSWITCH
+        WAIT 0
+    ENDWHILE
+    GOTO aircraft_spawner_menu
+}
+
+
+{
+aircraft_spawner_menu_page2:
+    DELETE_MENU 0
+    LVAR_INT acmp1id selected 
+    CREATE_MENU acmn 210.0 100.0 200.0 1 TRUE TRUE 0 acmp1id
+    SET_MENU_COLUMN acmp1id 0 DUMMY acmr12 acmr13 acmr14 acmr15 acmr16 acmr17 acmr18 acmr19 DUMMY DUMMY DUMMY DUMMY
+    PRINT_HELP_FOREVER pmh
+
+    WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 CROSS
+        WAIT 0
+    ENDWHILE
+
+    WHILE NOT IS_BUTTON_PRESSED PAD1 TRIANGLE
+
+        GET_MENU_ITEM_SELECTED acmp1id selected
+        SWITCH selected
+            case 0
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL POLMAV
+                    SPAWN_VEHICLE_BY_CHEATING POLMAV
+                    MARK_MODEL_AS_NO_LONGER_NEEDED POLMAV
+                    PRINT_HELP_STRING "Spawned Alpha by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 1
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL RAINDANC
+                    SPAWN_VEHICLE_BY_CHEATING RAINDANC
+                    MARK_MODEL_AS_NO_LONGER_NEEDED RAINDANC
+                    PRINT_HELP_STRING "Spawned Ambulance by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 2
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL RUSTLER
+                    SPAWN_VEHICLE_BY_CHEATING RUSTLER
+                    MARK_MODEL_AS_NO_LONGER_NEEDED RUSTLER
+                    PRINT_HELP_STRING "Spawned Andromada by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 3
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL SEASPAR
+                    SPAWN_VEHICLE_BY_CHEATING SEASPAR
+                    MARK_MODEL_AS_NO_LONGER_NEEDED SEASPAR
+                    PRINT_HELP_STRING "Spawned AT-400 by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 4
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL SHAMAL
+                    SPAWN_VEHICLE_BY_CHEATING SHAMAL
+                    MARK_MODEL_AS_NO_LONGER_NEEDED SHAMAL
+                    PRINT_HELP_STRING "Spawned Baggage Handler by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 5
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL SKIMMER
+                    SPAWN_VEHICLE_BY_CHEATING SKIMMER
+                    MARK_MODEL_AS_NO_LONGER_NEEDED SKIMMER
+                    PRINT_HELP_STRING "Spawned Bandito by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 6
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL SPARROW
+                    SPAWN_VEHICLE_BY_CHEATING SPARROW
+                    MARK_MODEL_AS_NO_LONGER_NEEDED SPARROW
+                    PRINT_HELP_STRING "Spawned Barracks by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+            case 7
+                IF IS_BUTTON_PRESSED PAD1 CROSS
+                    REQUEST_MODEL STUNT
+                    SPAWN_VEHICLE_BY_CHEATING STUNT
+                    MARK_MODEL_AS_NO_LONGER_NEEDED STUNT
+                    PRINT_HELP_STRING "Spawned Beagle by cheat"
+                    GOTO ok_go_to_main
+                ENDIF
+            BREAK
+        ENDSWITCH
+        WAIT 0
+    ENDWHILE
+    GOTO aircraft_spawner_menu
+}
+
 {
 vehicle_page_1_menu:
     DELETE_MENU 0
@@ -236,9 +477,10 @@ boat_spawner_menu:
         SWITCH selected
             case 0
                 IF IS_BUTTON_PRESSED PAD1 CROSS
-                    REQUEST_MODEL COASTG
-                    SPAWN_VEHICLE_BY_CHEATING COASTG
-                    MARK_MODEL_AS_NO_LONGER_NEEDED COASTG
+                    REQUEST_MODEL 473
+                    SPAWN_VEHICLE_BY_CHEATING 473
+                    //MARK_MODEL_AS_NO_LONGER_NEEDED 473
+                    VEHICL
                     //until I get it solved
                     PRINT_HELP_STRING "Spawned Andromada by cheat"
                     GOTO ok_go_to_main

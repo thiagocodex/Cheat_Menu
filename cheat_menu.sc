@@ -28,6 +28,7 @@ ADD_TEXT_LABEL sumn "Sub Urban"
 
 ADD_TEXT_LABEL vsmn "Vehicle Spawner"
 ADD_TEXT_LABEL vsauxmn "Vehicle-Spawner"
+ADD_TEXT_LABEL chauxmn "Coupe-Hatch"
 ADD_TEXT_LABEL crmn "Cars"
 
 //clothes category
@@ -182,11 +183,11 @@ ADD_TEXT_LABEL veh16 "Vehicles 16"
 ADD_TEXT_LABEL veh17 "Vehicles 17"
 
 
-//aircraft menu
+//vehicle category page 1
 ADD_TEXT_LABEL acmn "Aircraft"
 ADD_TEXT_LABEL boatmr "Boats"
-ADD_TEXT_LABEL chmr1 "Coupes & Hatchbacks 1"
-ADD_TEXT_LABEL chmr2 "Coupes & Hatchbacks 2"
+ADD_TEXT_LABEL chbmr1 "Coupes & Hatchbacks 1"
+ADD_TEXT_LABEL chbmr2 "Coupes & Hatchbacks 2"
 ADD_TEXT_LABEL govmr "Government"
 ADD_TEXT_LABEL indmr1 "Industrial"
 ADD_TEXT_LABEL indmr2 "Industrial 2"
@@ -196,6 +197,9 @@ ADD_TEXT_LABEL mbmr "Motercycles & Bikes"
 ADD_TEXT_LABEL novmr "Novelty"
 ADD_TEXT_LABEL psmr "Public Service"
 ADD_TEXT_LABEL rcmr "Remote Control"
+
+
+
 
 //boats menu
 ADD_TEXT_LABEL bomr0 "Coastguard"
@@ -209,10 +213,33 @@ ADD_TEXT_LABEL bomr7 "Speeder"
 ADD_TEXT_LABEL bomr8 "Squalo"
 ADD_TEXT_LABEL bomr9 "Tropic"
 
+
+//coupes & hatchback
+
+
+ADD_TEXT_LABEL chmr0 "Blista Compact"
+ADD_TEXT_LABEL chmr1 "Bravura"
+ADD_TEXT_LABEL chmr2 "Buccaneer"
+ADD_TEXT_LABEL chmr3 "Cadrona"
+ADD_TEXT_LABEL chmr4 "Clover"
+ADD_TEXT_LABEL chmr5 "Club"
+ADD_TEXT_LABEL chmr6 "Esperanto"
+ADD_TEXT_LABEL chmr7 "Feltzer"
+ADD_TEXT_LABEL chmr8 "Fortune"
+ADD_TEXT_LABEL chmr9 "Hermes"
+ADD_TEXT_LABEL chmr10 "Hustler"
+ADD_TEXT_LABEL chmr11 "Majestic"
+ADD_TEXT_LABEL chmr12 "Manana"
+ADD_TEXT_LABEL chmr13 "Previon"
+ADD_TEXT_LABEL chmr14 "Sabre"
+ADD_TEXT_LABEL chmr15 "Stallion"
+ADD_TEXT_LABEL chmr16 "Tampa"
+ADD_TEXT_LABEL chmr17 "Virgo"
+
 ADD_TEXT_LABEL acmnp1 "Aircraft 1"
 ADD_TEXT_LABEL acmnp2 "Aircraft 2"
 
-
+//aircraft menu 1
 ADD_TEXT_LABEL acmr0 "Andromada"
 ADD_TEXT_LABEL acmr1 "AT-400"
 ADD_TEXT_LABEL acmr2 "Beagle"
@@ -221,20 +248,20 @@ ADD_TEXT_LABEL acmr4 "Cropduster"
 ADD_TEXT_LABEL acmr5 "Dodo"
 ADD_TEXT_LABEL acmr6 "Hunter"
 ADD_TEXT_LABEL acmr7 "Hydra"
-ADD_TEXT_LABEL acmr8 "Jetpack"
-ADD_TEXT_LABEL acmr9 "Leviathan"
-ADD_TEXT_LABEL acmr10 "Nevada"
-ADD_TEXT_LABEL acmr11 "News Chopper"
-ADD_TEXT_LABEL acmr12 "Maverick"
-ADD_TEXT_LABEL acmr13 "Police Maverick"
-ADD_TEXT_LABEL acmr14 "Parachute"
-ADD_TEXT_LABEL acmr15 "Raindance"
-ADD_TEXT_LABEL acmr16 "Rustler"
-ADD_TEXT_LABEL acmr17 "Sea Sparrow"
-ADD_TEXT_LABEL acmr18 "Shamal"
-ADD_TEXT_LABEL acmr19 "Skimmer"
-ADD_TEXT_LABEL acmr20 "Sparrow"
-ADD_TEXT_LABEL acmr21 "Stuntplane"
+ADD_TEXT_LABEL acmr8 "Leviathan"
+ADD_TEXT_LABEL acmr9 "Nevada"
+ADD_TEXT_LABEL acmr10 "News Chopper"
+ADD_TEXT_LABEL acmr11 "Maverick"
+//aircraft menu 2
+
+ADD_TEXT_LABEL acmr12 "Police Maverick"
+ADD_TEXT_LABEL acmr13 "Raindance"
+ADD_TEXT_LABEL acmr14 "Rustler"
+ADD_TEXT_LABEL acmr15 "Sea Sparrow"
+ADD_TEXT_LABEL acmr16 "Shamal"
+ADD_TEXT_LABEL acmr17 "Skimmer"
+ADD_TEXT_LABEL acmr18 "Sparrow"
+ADD_TEXT_LABEL acmr19 "Stuntplane"
 
 /////////////////////////////////////
 
