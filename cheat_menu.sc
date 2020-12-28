@@ -244,6 +244,47 @@ ADD_TEXT_LABEL hcmr9 "Mohawk"
 ADD_TEXT_LABEL hcmr10 "Blonde Mohawk"
 ADD_TEXT_LABEL hcmr11 "Pink Mohawk"
 
+ADD_TEXT_LABEL hcmr12 "Red Hair"
+ADD_TEXT_LABEL hcmr13 "Blue Hair"
+ADD_TEXT_LABEL hcmr14 "Green Hair"
+ADD_TEXT_LABEL hcmr15 "Bald Head"
+ADD_TEXT_LABEL hcmr16 "Bald & Stash"
+ADD_TEXT_LABEL hcmr17 "Bald & Goatee"
+ADD_TEXT_LABEL hcmr18 "Cesar & Beard"
+ADD_TEXT_LABEL hcmr19 "Slope"
+ADD_TEXT_LABEL hcmr20 "Mohawk & Beard"
+ADD_TEXT_LABEL hcmr21 "Elvis Hair"
+
+ADD_TEXT_LABEL hcmr22 "Cesar & Stash"
+ADD_TEXT_LABEL hcmr23 "Cesar & Goatee"
+ADD_TEXT_LABEL hcmr24 "Cesar & Beard"
+ADD_TEXT_LABEL hcmr25 "Afro"
+ADD_TEXT_LABEL hcmr26 "Afro & Stash"
+ADD_TEXT_LABEL hcmr27 "Afro & Goatee"
+ADD_TEXT_LABEL hcmr28 "Afro & Beard"
+ADD_TEXT_LABEL hcmr29 "FlatTop"
+ADD_TEXT_LABEL hcmr30 "Jheri Curl"
+ADD_TEXT_LABEL hcmr31 "Cornrow"
+ADD_TEXT_LABEL hcmr32 "High Fade"
+
+
+//remove clothes 
+ADD_TEXT_LABEL rcmn "Remove Clothes"
+ADD_TEXT_LABEL rcmr0 "Remove Torso"
+ADD_TEXT_LABEL rcmr1 "Remove Legs"
+ADD_TEXT_LABEL rcmr2 "Remove Shoes"
+ADD_TEXT_LABEL rcmr3 "Remove Necklace"
+ADD_TEXT_LABEL rcmr4 "Remove Watch"
+ADD_TEXT_LABEL rcmr5 "Remove Glasses"
+ADD_TEXT_LABEL rcmr6 "Remove Hat"
+ADD_TEXT_LABEL rcmr7 "Remove Special Costume"
+
+
+
+//wanted level
+ADD_TEXT_LABEL wlmn "Wanted Level"
+ADD_TEXT_LABEL wlmr0 "Clear wanted level"
+
 
 
 {
@@ -281,20 +322,17 @@ main:
     PRINT_FORMATTED_NOW "%f %f %f" 0 x y z
     WAIT 0 */
 
-     IF IS_BUTTON_PRESSED PAD1 LEFTSHOULDER1
-     AND IS_BUTTON_PRESSED PAD1 RIGHTSHOULDER1
+    IF IS_BUTTON_PRESSED PAD1 LEFTSHOULDER1
+    AND IS_BUTTON_PRESSED PAD1 RIGHTSHOULDER1
         
         GET_PLAYER_CHAR  0 player
         SET_CHAR_COORDINATES player 2492.0, -1664.0, 13.0
         PRINT_HELP_STRING "Teleportado"
 
-    WHILE IS_BUTTON_PRESSED PAD1 LEFTSHOULDER1
-    AND IS_BUTTON_PRESSED PAD1 RIGHTSHOULDER1
-        WAIT 0
-    ENDWHILE
-
-
-
+        WHILE IS_BUTTON_PRESSED PAD1 LEFTSHOULDER1
+        AND IS_BUTTON_PRESSED PAD1 RIGHTSHOULDER1
+            WAIT 0
+        ENDWHILE
     ENDIF 
 
     IF IS_BUTTON_PRESSED PAD1 CROSS
@@ -317,6 +355,84 @@ main:
         WAIT 0
     ENDWHILE
 
+
+    LVAR_INT car carp read read2 status
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADLEFT
+    AND IS_BUTTON_PRESSED PAD1 CIRCLE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADRIGHT
+    AND IS_BUTTON_PRESSED PAD1 CIRCLE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADLEFT
+    AND IS_BUTTON_PRESSED PAD1 SQUARE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADRIGHT
+    AND IS_BUTTON_PRESSED PAD1 SQUARE
+        WAIT 0
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADLEFT
+        WAIT 0
+        IF IS_BUTTON_PRESSED PAD1 SQUARE
+            GET_PLAYER_CHAR 0 player
+            GET_CAR_CHAR_IS_USING player car
+            SET_CAR_ENGINE_BROKEN car TRUE
+            PRINT_HELP_STRING "Engine off"
+            GOTO main
+        ELSE 
+            IF IS_BUTTON_PRESSED PAD1 CIRCLE
+                GET_PLAYER_CHAR 0 player
+                GET_CAR_CHAR_IS_USING player car
+                GET_VEHICLE_POINTER car carp
+                IF IS_CHAR_IN_ANY_CAR player
+                    carp+=1192
+                    WRITE_MEMORY carp 1 8 0
+                    ADD_ONE_OFF_SOUND 0.0 0.0 0.0 1150
+                    PRINT_HELP_STRING "Lights off"
+                    GOTO main
+                ENDIF
+            ENDIF
+        ENDIF
+    ENDWHILE
+
+    WHILE IS_BUTTON_PRESSED PAD1 DPADRIGHT
+        WAIT 0
+        IF IS_BUTTON_PRESSED PAD1 SQUARE
+            GET_PLAYER_CHAR 0 player
+            GET_CAR_CHAR_IS_USING player car
+            SET_CAR_ENGINE_BROKEN car FALSE
+            SET_CAR_ENGINE_ON car TRUE
+            PRINT_HELP_STRING "Engine started"
+            SET_PLAYER_CONTROL 0 FALSE
+            WAIT 1000
+            SET_PLAYER_CONTROL 0 TRUE
+            GOTO main
+        ELSE
+            IF IS_BUTTON_PRESSED PAD1 CIRCLE
+                GET_PLAYER_CHAR 0 player
+                GET_CAR_CHAR_IS_USING player car
+                GET_VEHICLE_POINTER car carp
+                IF IS_CHAR_IN_ANY_CAR player
+                    carp+=1192
+                    READ_MEMORY carp 1 0 read
+                    IF IS_INT_LVAR_EQUAL_TO_NUMBER read 8
+                        WRITE_MEMORY carp 1 16 0
+                        ADD_ONE_OFF_SOUND 0.0 0.0 0.0 1150
+                        PRINT_HELP_STRING "Lights on"
+                        GOTO main
+                    ENDIF
+                ENDIF
+            ENDIF
+        ENDIF
+    ENDWHILE
+
     WHILE IS_KEY_PRESSED VK_RSHIFT
         PRINT_STRING_NOW "Script recarregado!" 1000
         STREAM_CUSTOM_SCRIPT  "cheat_menu.cs"
@@ -324,6 +440,9 @@ main:
         WAIT 0
     ENDWHILE
     GOTO main
+
+
+
 }
 
 {

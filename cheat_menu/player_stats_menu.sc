@@ -113,7 +113,7 @@ fat_stats_menu:
 {
 muscle_stats_menu:
     LVAR_INT mscmid selected
-    CREATE_MENU fatmn 210.0 100.0 200.0 1 TRUE TRUE 0 mscmid
+    CREATE_MENU mscmn 210.0 100.0 200.0 1 TRUE TRUE 0 mscmid
     SET_MENU_COLUMN mscmid 0 DUMMY mscmr0 mscmr1 mscmr2 mscmr3 mscmr4 mscmr5 DUMMY DUMMY DUMMY DUMMY DUMMY DUMMY
 
     WHILE IS_BUTTON_PRESSED PAD1 TRIANGLE
